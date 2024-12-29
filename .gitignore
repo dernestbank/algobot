@@ -1,4 +1,7 @@
 env
+venv
 .env
 .vscode
 confidencials
+no_git
+
