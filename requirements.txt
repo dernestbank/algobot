@@ -3,3 +3,5 @@ plotly
 pandas
 Streamlit
 Scikit-learn
+python-dotenv
+atj_algotrading
