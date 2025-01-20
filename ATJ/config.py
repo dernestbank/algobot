@@ -23,3 +23,8 @@ def initialize_mt5():
     mt5.initialize(mt5_credentials['exe_path'])
     mt5.login(mt5_credentials['login'], mt5_credentials['password'], mt5_credentials['server'])
     print(mt5.account_info())
+    
+    return mt5
+
+
+initialize_mt5()
