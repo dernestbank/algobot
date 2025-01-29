@@ -4,8 +4,19 @@ import pandas as pd
 from datetime import datetime, time, timedelta
 import pytz
 
-from mt5_credentials import login, password, server
-from projects.atj_trading_legacy.mt5_trade_utils import send_market_order, close_all_positions, get_positions
+from os.path import dirname, abspath, join
+# Get the root directory (algobot)
+root_dir = dirname(dirname(dirname(abspath(__file__))))
+import sys
+# Add the ATJ directory to Python path
+atj_path = join(root_dir, 'ATJ')
+sys.path.append(atj_path)
+
+print('Python paths:')
+print(f'Root directory: {root_dir}')
+print(f'ATJ directory: {atj_path}')
+# from ATJ.mt5_credentials import login, password, server
+from mt5_trade_utils import send_market_order, close_all_positions, get_positions
 
 """
 # Define trading signals
@@ -60,7 +71,7 @@ def get_exit_signal(x):
 
 """
 
-symbol = 'USTEC'
+symbol = 'USTECm'
 timeframe = mt5.TIMEFRAME_H1
 volume = 0.1
 magic = 1
@@ -117,7 +128,7 @@ if __name__ == '__main__':
 
     # Click here to open your own trading_bots account at Tickmill
     # https://bit.ly/4dtsz1Q
-    mt5.login(login, password, server)
+    # mt5.login(login, password, server)
 
     trading_allowed = True
     while trading_allowed:
