@@ -9,8 +9,6 @@
 # Below is the sample code integrating this functional
 
 # ```
-
-
 import MetaTrader5 as mt5
 from telegram import Update, Bot
 from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, Filters
@@ -22,7 +20,8 @@ import time
 # ---------------------------
 # Bot & MT5 Initialization
 # ---------------------------
-TELEGRAM_BOT_TOKEN ="7078638445:AAH3OF4Usyiq6KPo46dtzdcvwA4US-ZJLJY"
+from config import TOKEN2, CHAT_ID2
+TELEGRAM_BOT_TOKEN =TOKEN2
 CHAT_ID = 803510108
 
 if not mt5.initialize():
